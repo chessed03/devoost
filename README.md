@@ -17,12 +17,14 @@
               Para ejecutar basta con: php artisan test --filter test_process_array desde la consola en la ubicacion en la que se encuentre el directorio, 
               los datos estan de manera fija y pueden ser modificados desde el directorio: tests/Unit/NumberTest.php; en la funcion: test_process_array.
                 
-# Para hacer uso del aplicativo de productos.
+# Para hacer uso de las otras funcionalidades.
     
     4.- Hacer lo siguiente:
         - Crear una base de datos en mysql con el nombre que más prefiera.
         - Configurar el archivo .env con el nombre de la BD recien creada.
         - Ejecutar el comando desde consola en el directorio del proyecto:
+            - php artisan key:gen
+            - php artisan config:clear
             - php artisan migrate
 
     5.- Ejecutar el comando desde consola en el directorio del proyecto:
