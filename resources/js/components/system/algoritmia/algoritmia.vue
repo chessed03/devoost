@@ -104,7 +104,7 @@ export default {
                 number_list     : this.number_list,
             }).then(response => {
 
-                console.log(response);
+                console.log(response)
 
 
             }).catch(error => {
