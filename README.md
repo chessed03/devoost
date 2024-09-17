@@ -52,8 +52,6 @@
             - Podemos: editar y elimiar
             - Para la edicion se pueden agregar mas elementos a lista o eliminarlo segun convengan.
 
-    Nota: por cuestiones de tiempo, no fué posible crear la recuperacion del password del usuario.
-
     Saludos.
         
 
