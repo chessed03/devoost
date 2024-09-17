@@ -12,10 +12,15 @@ trait Number {
 
     public function find(int $num)
     {
+        return $this->findBorders($this->list, $num);
+    }
+
+    private static function findBorders(array $list, int $num): string
+    {
         $lower  = 'X';
         $higher = 'X';
 
-        foreach ($this->list as $n) {
+        foreach ($list as $n) {
             if ($n < $num) {
                 $lower = $n;
             } elseif ($n > $num) {

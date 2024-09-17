@@ -1,26 +1,39 @@
 # Para iniciar el proyecto
-    1.- Ejecutar:
+    1.- Ejecutar desde consola en el directorio del proyecto:
         - composer install
 
-    2.- Ejecutar:
+    2.- Ejecutar desde consola en el directorio del proyecto:
         - npm install
         - npm run build
-
-    3.- Hacer lo siguiente:
+    
+    3.- En el navegador ingresar a la ruta default (/), dependiendo de la configuracion del server desde localhost o desde un alias virtualizado.
+        - Nos ubicará en el login.
+        - En la parte superior hay un menú con las opciones:
+            * Prueba algoritmia
+            * Prueba vue
+            * Login
+        - Seguimos las instrcciones para cada prueba.
+        Nota: Para la prueba de algoritmia via consola, esta realizada con TDD de laravel, este test se realizó antes de pasarlo a la interfaz de usuario.
+              Para ejecutar basta con: php artisan test --filter test_process_array desde la consola en la ubicacion en la que se encuentre el directorio, 
+              los datos estan de manera fija y pueden ser modificados desde el directorio: tests/Unit/NumberTest.php; en la funcion: test_process_array.
+                
+# Para hacer uso del aplicativo de productos.
+    
+    4.- Hacer lo siguiente:
         - Crear una base de datos en mysql con el nombre que más prefiera.
-        - Confurar el archivo .env con el nombre de la BD recien creada.
-        - Ejecutar el comando:
+        - Configurar el archivo .env con el nombre de la BD recien creada.
+        - Ejecutar el comando desde consola en el directorio del proyecto:
             - php artisan migrate
 
-    4.- Ejecutar el server con:
+    5.- Ejecutar el comando desde consola en el directorio del proyecto:
         - php artisan serve
 
-    5.- Crear un usuario:
+    6.- Crear un usuario:
         - Con el link "Registrarse" crea su usuario con los datos solicitados.
         - Una vez echo el registro, lo envia al login.
         - Ingresa con su email y password previamente creados.
 
-    6.- Una vez en el sistema de órdenes veremos lo siguiente:
+    7.- Una vez en el sistema de órdenes veremos lo siguiente:
         - Paágina de bienvenida.
         - Mené con la siguientes opciones:
             - Inicio.
@@ -32,7 +45,7 @@
         
         - Nota: no se puede acceder por url sino se ha inicado sesion, una vez la sesion termina ya no tenemos acceso al sistema.
 
-    7.- Uso del sistema
+    8.- Uso del sistema
         - Creamos clientes
             - Ingresamos los datos solicitados.
             - Podemos: editar y elimiar.
@@ -51,7 +64,5 @@
             - La sumatorio cambiará automaticamente.
             - Podemos: editar y elimiar
             - Para la edicion se pueden agregar mas elementos a lista o eliminarlo segun convengan.
-
-    Saludos.
         
 

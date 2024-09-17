@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="flex mt-6 space-x-4">
-                        <button type="button" class="py-2 px-4 text-center bg-red-500 rounded-md w-full text-white hover:bg-red-600">Limpiar</button>
+                        <button type="button" @click="clearInputs()" class="py-2 px-4 text-center bg-red-500 rounded-md w-full text-white hover:bg-red-600">Limpiar</button>
                         <button type="submit" class="py-2 px-4 text-center bg-blue-500 rounded-md w-full text-white hover:bg-blue-600">Evaluar</button>
                     </div>
                 </form>
@@ -53,7 +53,15 @@
                 [ RESULTADO ] <br>
                 <br>
                 <hr>
+                <div v-if="process_result.length > 0" class="mt-4">
+                    <div v-for="(result, index) in process_result" :key="index"
+                         class="p-2 bg-blue-200 my-2 rounded-md shadow-md">
+                        {{ result }}
+                    </div>
+                </div>
+                <div v-else class="mt-4">
 
+                </div>
             </div>
 
         </div>
@@ -70,9 +78,17 @@ export default {
             number_base     : '',
             number_query    : null,
             number_list     : '',
+            process_result  : [],
         };
     },
     methods: {
+        clearInputs() {
+                this.number_evaluate = null;
+                this.number_base     = '';
+                this.number_query    = null;
+                this.number_list     = '';
+                this.process_result  = [];
+        },
         validateInput(event, type) {
 
             let charCode = (event.which) ? event.which : event.keyCode;
@@ -94,7 +110,7 @@ export default {
 
         },
         validate() {
-            console.log(this.number_base, this.number_list);
+
             const url = '/api/iyata/algoritmia';
 
             axios.post(url, {
@@ -104,8 +120,14 @@ export default {
                 number_list     : this.number_list,
             }).then(response => {
 
-                console.log(response)
+                let service = response.data.service;
+                let data    = response.data.data;
 
+                if (service) {
+
+                    this.process_result = data;
+
+                }
 
             }).catch(error => {
 
